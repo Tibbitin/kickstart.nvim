@@ -14,6 +14,9 @@ return {
         ---@type string
         arg = 'leetcode.nvim',
 
+        ---@alias lc.lang
+        ---| "python3"
+
         ---@type lc.lang
         lang = 'python3',
 

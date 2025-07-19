@@ -220,6 +220,17 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
+vim.keymap.set('n', '<leader>dv', function()
+  vim.diagnostic.config { virtual_lines = { current_line = true }, virtual_text = false }
+
+  vim.api.nvim_create_autocmd('CursorMoved', {
+    group = vim.api.nvim_create_augroup('line-diagnostics', { clear = true }),
+    callback = function()
+      vim.diagnostic.config { virtual_lines = false, virtual_text = true }
+      return true
+    end,
+  })
+end)
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
