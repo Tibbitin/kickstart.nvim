@@ -11,50 +11,11 @@ return {
     opts = {
       -- configuration goes here
       {
-        ---@alias lc.lang
-        ---| "cpp"
-        ---| "java"
-        ---| "python"
-        ---| "python3"
-        ---| "c"
-        ---| "csharp"
-        ---| "javascript"
-        ---| "typescript"
-        ---| "php"
-        ---| "swift"
-        ---| "kotlin"
-        ---| "dart"
-        ---| "golang"
-        ---| "ruby"
-        ---| "scala"
-        ---| "rust"
-        ---| "racket"
-        ---| "erlang"
-        ---| "elixir"
-        ---| "bash"
-
-        ---@alias lc.hook
-        ---| "enter"
-        ---| "question_enter"
-        ---| "leave"
-
-        ---@alias lc.size
-        ---| string
-        ---| number
-        ---| { width: string | number, height: string | number }
-
-        ---@alias lc.position "top" | "right" | "bottom" | "left"
-
-        ---@alias lc.direction "col" | "row"
-
-        ---@alias lc.inject { gap?: number, imports?: (fun(default_imports: string[]): string[])|string|string[], before?: string|string[], after?: string|string[] }
-
-        ---@alias lc.storage table<"cache"|"home", string>
-
-        ---@alias lc.picker { provider?: "fzf-lua" | "telescope" | "snacks-picker" }
-
         ---@type string
         arg = 'leetcode.nvim',
+
+        ---@alias lc.lang
+        ---| "python3"
 
         ---@type lc.lang
         lang = 'python3',
