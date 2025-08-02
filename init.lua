@@ -95,6 +95,8 @@ vim.opt.expandtab = true
 
 vim.opt.scrolloff = 8
 
+vim.opt.clipboard = 'unnamedplus'
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -102,7 +104,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -232,7 +234,7 @@ vim.keymap.set('n', '<leader>dv', function()
   })
 end)
 
-vim.keymap.set('v', '<leader>y', [["+Y]])
+vim.keymap.set('n', '<leader>y', [["*Y]])
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
