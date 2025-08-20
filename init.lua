@@ -127,6 +127,8 @@ function RelativeNumber()
   end
 end
 
+vim.g.netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
 
