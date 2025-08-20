@@ -86,7 +86,6 @@ P.S. You can delete this when you're done too. It's your config now! :)
 
 -- MY SETS
 vim.opt.nu = true
-vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -115,7 +114,18 @@ vim.g.have_nerd_font = true
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.o.relativenumber = true
+vim.o.relativenumber = true
+vim.o.statuscolumn = '%!v:lua.RelativeNumber()'
+function RelativeNumber()
+  local rel = math.abs(vim.fn.line '.' - vim.v.lnum)
+  if rel == 0 then
+    return tostring(vim.v.lnum)
+  elseif rel <= 9 then
+    return tostring(rel)
+  else
+    return tostring(vim.v.lnum)
+  end
+end
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
