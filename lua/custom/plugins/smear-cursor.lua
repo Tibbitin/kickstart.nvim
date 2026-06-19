@@ -15,11 +15,13 @@ require('smear_cursor').setup({
 
     -- Set to `true` if your font supports legacy computing symbols (block unicode symbols).
     -- Smears will blend better on all backgrounds.
-    legacy_computing_symbols_support = true,
+    legacy_computing_symbols_support = false,
 
     -- Smear cursor in insert mode.
     -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
     smear_insert_mode = false,
 
-    cursor_color = '#c3c3c3',
+    cursor_color = '#D99184',
+
+    hide_target_hack = true,
 })
